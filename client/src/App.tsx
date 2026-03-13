@@ -1,11 +1,22 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import './App.css'
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <div style={{ padding: "40px", fontSize: "30px" }}>
-      DevVault Frontend
-    </div>
+    <BrowserRouter>
+      <Routes>
+
+        <Route path="/login" element={<Login />} />
+
+        <Route path="/register" element={<Register />} />
+
+        <Route path="/" element={<Dashboard />} />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
