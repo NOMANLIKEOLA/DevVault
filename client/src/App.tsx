@@ -4,18 +4,30 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 
+import ProtectedRoute from "./routes/ProtectedRoute";
+
 function App() {
+
   return (
     <BrowserRouter>
+
       <Routes>
 
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
 
         <Route path="/register" element={<Register />} />
 
-        <Route path="/" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
 
       </Routes>
+
     </BrowserRouter>
   );
 }
